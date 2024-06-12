@@ -1,11 +1,11 @@
-import inquirer from "inquirer";
-import { projectTypeList, projectTypeTemplateUrl } from "../config";
-import downLoadTemplate from "./downloadTemplate";
 import chalk from "chalk";
+import inquirer from "inquirer";
 import ora from "ora";
+import { projectTypeList, projectTypeTemplateUrl } from "../config";
+import downLoadTemplate from "../utils/downloadTemplate";
 
 interface ProjectManager {
-  [projectType]: (typeof projectTypeList)[number];
+  [projectType]: typeof projectTypeList[number];
   [projectName]: string;
 }
 
@@ -14,7 +14,7 @@ const projectName = "projectName";
 
 const spinner = ora();
 
-async function init() {
+async function createApp() {
   const options = [
     {
       type: "list",
@@ -49,4 +49,4 @@ async function init() {
   }
 }
 
-init();
+export default createApp;
