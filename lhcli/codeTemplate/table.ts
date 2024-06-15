@@ -1,6 +1,7 @@
 import { capitalizeFirstLetter } from "../utils";
 
 export function getTableTemplate(name: string, path: string) {
+  path = path.replace(/\\/g, "/");
   const upperCaseName = capitalizeFirstLetter(name);
   return `
 <template>
@@ -25,6 +26,7 @@ const [registerTable] = useTable({
 }
 
 export function getTableModalTemplate(name: string, path: string) {
+  path = path.replace(/\\/g, "/");
   const upperCaseName = capitalizeFirstLetter(name);
   return `
 <template>
@@ -117,6 +119,7 @@ const createActions = (record: BasicColumn, _: EditRecordRow): ActionItem[] => [
 }
 
 export function getTableDrawerTemplate(name: string, path: string) {
+  path = path.replace(/\\/g, "/");
   const upperCaseName = capitalizeFirstLetter(name);
   return `
 <template>

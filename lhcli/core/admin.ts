@@ -9,6 +9,7 @@ import {
   getTableModalTemplate,
   getTableTemplate,
 } from "../codeTemplate/table";
+import { capitalizeFirstLetter } from "../utils";
 import { createFolder, rmFolder, writeFile } from "../utils/file";
 
 function wirteAdminModuleViewsFile(
@@ -78,10 +79,11 @@ function generateAdminModule(
   formContainer: AdminFormContainer
 ) {
   const folderPath = getFolderPath(parentFolder, moduleName);
+  const finallyModuleName = parentFolder + capitalizeFirstLetter(moduleName);
   // 写入views
-  wirteAdminModuleViewsFile(folderPath, moduleName, formContainer);
+  wirteAdminModuleViewsFile(folderPath, finallyModuleName, formContainer);
   // 写入api
-  wirteAdminModuleApiFile(folderPath, moduleName);
+  wirteAdminModuleApiFile(folderPath, finallyModuleName);
 }
 
 async function rmAdminModule(

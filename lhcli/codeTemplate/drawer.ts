@@ -1,6 +1,7 @@
 import { capitalizeFirstLetter } from "../utils";
 
 export function getDrawerTemplate(name: string, path: string) {
+  path = path.replace(/\\/g, "/");
   const upperCaseName = capitalizeFirstLetter(name);
   return `
 <template>
