@@ -13,8 +13,11 @@ export function getModalTemplate(name: string, path: string) {
 import { ref, defineEmits } from 'vue';
 import { BasicModal, useModalInner } from '@/components/Modal';
 import { BasicForm, useForm } from '@/components/Form';
+import { useMessage } from '@/hooks/web/useMessage';
 import { formSchema } from './${name}.data';
 import { add${upperCaseName}Api, update${upperCaseName}Api } from '@/api/${path}';
+
+const { createMessage } = useMessage();
 
 const emit = defineEmits(['reload', 'register']);
 const getTitle = ref<string>('');
@@ -45,6 +48,7 @@ async function handleSubmit() {
     changeOkLoading(false);
     await resetFields();
     emit('reload');
+    createMessage.success(getTitle.value + '成功！');
     closeModal();
   } catch(error) {
     console.error(error);
