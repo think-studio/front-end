@@ -79,7 +79,8 @@ function generateAdminModule(
   formContainer: AdminFormContainer
 ) {
   const folderPath = getFolderPath(parentFolder, moduleName);
-  const finallyModuleName = parentFolder + capitalizeFirstLetter(moduleName);
+  const finallyModuleName =
+    parentFolder ?? "" + capitalizeFirstLetter(moduleName);
   // 写入views
   wirteAdminModuleViewsFile(folderPath, finallyModuleName, formContainer);
   // 写入api

@@ -9,7 +9,7 @@ export function getTableTemplate(name: string, path: string) {
 </template>
 <script lang="ts" setup name="${upperCaseName}">
 import { BasicTable, useTable } from '@/components/Table';
-import { ${name}PageListApi } from '@/api/${path}}';
+import { ${name}PageListApi } from '@/api/${path}';
 import { columns, searchFormSchema } from './${name}.data';
 
 const [registerTable] = useTable({
