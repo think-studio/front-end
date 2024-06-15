@@ -31,7 +31,7 @@ const emit = defineEmits(['success', 'register']);
 const isUpdate = ref<boolean>(true);
 const skeletonLoading = ref<boolean>(false);
 const [registerForm, { resetFields, setFieldsValue, validate }] = useForm({
-  labelWidth: 90,
+  labelWidth: 80,
   schemas: formSchema,
   showActionButtonGroup: false,
 });

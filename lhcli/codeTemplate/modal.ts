@@ -32,12 +32,7 @@ const [registerModal, { closeModal, changeOkLoading }] = useModalInner((data) =>
 });
 
 const [registerForm, { validate, setFieldsValue, resetFields }] = useForm({
-  labelCol: {
-    span: 8,
-  },
-  wrapperCol: {
-    span: 10,
-  },
+  labelWidth: 80,
   schemas: formSchema,
   showActionButtonGroup: false,
 });

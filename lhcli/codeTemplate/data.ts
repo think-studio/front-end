@@ -29,6 +29,9 @@ export const formSchema: FormSchema[] = [
     label: 'Id',
     component: 'Input',
     show: false,
+    colProps: {
+      span: 24,
+    },
   },
 ];`;
 }
