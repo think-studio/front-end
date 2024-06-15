@@ -92,9 +92,7 @@ function handleEdit(record) {
 
 function handleDelete(record) {
   delete${upperCaseName}ByIdApi(record.id).then((res) => {
-    if (res.code === 200) {
-      reload();
-    }
+    reload();
   });
 }
 const createActions = (record: BasicColumn, _: EditRecordRow): ActionItem[] => [
@@ -178,9 +176,7 @@ function handleEdit(id) {
 
 function handleDelete(record) {
   delete${upperCaseName}ByIdApi(record.id).then((res) => {
-    if (res.code === 200) {
-      reload();
-    }
+    reload();
   });
 }
 const createActions = (record: BasicColumn, _: EditRecordRow): ActionItem[] => [
