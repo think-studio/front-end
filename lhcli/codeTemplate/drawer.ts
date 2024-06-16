@@ -35,10 +35,10 @@ const [registerForm, { resetFields, setFieldsValue, validate }] = useForm({
   schemas: formSchema,
   showActionButtonGroup: false,
 });
-const [registerDrawer, { setDrawerProps, closeDrawer }] = useDrawerInner(async (data) => {
+const [registerDrawer, { setDrawerProps, closeDrawer }] = useDrawerInner(async ({ isUpdate, data }) => {
   await resetFields();
   setDrawerProps({ confirmLoading: false });
-  isUpdate.value = !!data?.isUpdate;
+  isUpdate.value = !!isUpdate;
   if (unref(isUpdate)) {
     skeletonLoading.value = true;
     const res = await ${name}DetailByIdApi(data.id)

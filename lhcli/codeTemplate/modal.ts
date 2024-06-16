@@ -21,8 +21,8 @@ const { createMessage } = useMessage();
 
 const emit = defineEmits(['reload', 'register']);
 const getTitle = ref<string>('');
-const [registerModal, { closeModal, changeOkLoading }] = useModalInner((data) => {
-  if (!data.id) {
+const [registerModal, { closeModal, changeOkLoading }] = useModalInner(({ isUpdate, data }) => {
+  if (!isUpdate) {
     getTitle.value = '新增';
   } else {
     getTitle.value = '修改';

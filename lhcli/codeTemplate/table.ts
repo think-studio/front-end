@@ -86,7 +86,7 @@ function handleAdd() {
 function handleEdit(record) {
   openModal(true, {
     isUpdate: true,
-    record,
+    data: record,
   });
 }
 
