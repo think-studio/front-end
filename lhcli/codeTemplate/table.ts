@@ -42,7 +42,7 @@ export function getTableModalTemplate(name: string, path: string) {
   <FormModal @register="registerModal" @reload="reload" />
 </div>
 </template>
-<script lang="ts" setup name=${upperCaseName}>
+<script lang="ts" setup name="${upperCaseName}">
 import { toRaw } from 'vue';
 import {
   BasicTable,
